@@ -59,3 +59,7 @@ Automated Squeeze Momentum trading on Hyperliquid
 
 --------
 
+## CI Status
+
+This project is configured with GitHub Actions for continuous integration.
+
