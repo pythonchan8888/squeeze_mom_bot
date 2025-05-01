@@ -1,5 +1,9 @@
 # Data
 /data/
+# But allow these specific files
+!data/.gitkeep
+!data/example.csv
+!data/*.lock
 
 # Mac OS-specific storage files
 .DS_Store
