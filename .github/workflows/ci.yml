@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"          # match local interpreter
+
+    - name: Install Poetry
+      run: |
+        pip install poetry==2.1.2
+        # plugin only if you later need `poetry export`
+        # poetry self add poetry-plugin-export
+
+    - name: Install dependencies
+      run: |
+        poetry install --no-interaction --sync
+
+    - name: Ruff lint
+      run: |
+        poetry run ruff check .
+
+    - name: Pytest
+      run: |
+        poetry run pytest 
