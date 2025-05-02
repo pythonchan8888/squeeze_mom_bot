@@ -1,9 +1,9 @@
 # Data
-/data/
-# But allow these specific files
-!data/.gitkeep
-!data/example.csv
-!data/*.lock
+/data/                # ignore everything
+!/data/               # …but allow the directory itself
+!/data/.gitkeep       # …and keep this placeholder file
+!/data/example.csv    # (optional) keep the sample file
+!/data/*.lock         # (optional) keep lock files
 
 # Mac OS-specific storage files
 .DS_Store
